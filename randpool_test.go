@@ -6,7 +6,6 @@ import (
 
 func TestClock(t *testing.T) {
 	c1 := NewClock(4)
-
 	v1 := c1.Next()
 
 	if v1 != 10001 {
@@ -14,7 +13,6 @@ func TestClock(t *testing.T) {
 	}
 
 	c2 := NewClock(4)
-
 	c2.Next()       // 10002
 	c2.Next()       // 20002
 	c2.Next()       // 30002
@@ -23,5 +21,4 @@ func TestClock(t *testing.T) {
 	if v2 != 40002 {
 		t.Errorf("got %d, want %d", v2, 40002)
 	}
-
 }
