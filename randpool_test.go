@@ -10,7 +10,7 @@ func TestClock(t *testing.T) {
 	v1 := c1.Next()
 
 	if v1 != 10001 {
-		t.Errorf("got %d, want %d", v1, 40001)
+		t.Errorf("got %d, want %d", v1, 10001)
 	}
 
 	c2 := NewClock(4)
