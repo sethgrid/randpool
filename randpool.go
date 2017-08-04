@@ -24,9 +24,9 @@ func New(size int32, fn func() int64) Pool {
 	}
 }
 
-func (p Pool) Next() *rand.Rand {
+func (p *Pool) Next() *rand.Rand {
 	i := atomic.AddInt32(&p.iter, 1)
-	if i > p.capacity {
+	if i >= p.capacity {
 		atomic.StoreInt32(&p.iter, 0)
 		i = 0
 	}
